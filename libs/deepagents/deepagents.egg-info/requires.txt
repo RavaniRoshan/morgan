@@ -1,0 +1,12 @@
+langchain-core<2.0.0,>=1.4.8
+langsmith>=0.8.11
+langchain-anthropic<2.0.0,>=1.4.7
+langchain-google-genai<5.0.0,>=4.2.5
+langchain<2.0.0,>=1.3.11
+wcmatch>=10.1
+
+[aws]
+langchain-aws<2.0.0,>=1.6.0
+
+[quickjs]
+langchain-quickjs>=0.3.2
