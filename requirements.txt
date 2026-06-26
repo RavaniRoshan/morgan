@@ -1,0 +1,9 @@
+langgraph
+langchain-core
+langchain-community
+pydantic
+typer
+rich
+pytest
+fastapi
+uvicorn

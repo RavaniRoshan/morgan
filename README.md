@@ -1,0 +1,3 @@
+# Morgan
+
+Morgan is a fully autonomous, open-source software-engineering and research agent harness designed to be a low-overhead system where failures come from the model, not the harness loop, context handling, or tool execution. To set up, create a virtual environment with `python -m venv .venv`, activate it with `source .venv/bin/activate`, and install dependencies via `pip install -r requirements.txt`.
