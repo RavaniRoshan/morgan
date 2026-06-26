@@ -1,58 +1,91 @@
-# Morgan 🚀
+<p align="center">
+  <img src="https://raw.githubusercontent.com/langchain-ai/deepagents/main/libs/code/images/tui.png" alt="Morgan" width="600"/>
+</p>
 
-Morgan is a state-of-the-art, low-latency autonomous coding harness and agentic AI environment, designed with a stunning Terminal User Interface (TUI) reminiscent of Claude Code. Engineered for raw speed and security, Morgan integrates seamlessly into your local development environment while maintaining strict isolation protocols.
+# 🌌 Morgan
 
-## Features
+**The next-generation autonomous coding harness. Morgan is a high-performance AI agentic environment featuring a stunning TUI, strict security isolation, and a modular architecture for frontier AI engineering.**
 
-- **Blazing Fast TUI**: A buttery-smooth, fully-animated terminal user interface built on Textual. 
-- **Autonomous Subagents**: Out-of-the-box support for delegating complex, asynchronous tasks to isolated subagent processes.
-- **Dynamic Configuration (`agent.md`)**: Project-level custom instructions automatically injected into the core system prompt via local `.deepagents/agent.md` files.
-- **Slash Commands**: Powerful chat commands (`/skills`, `/mcp`, `/settings`, `/notifications`) for seamless configuration without ever leaving the TUI.
-- **Tight Security**: Enforced `0o600` and `0o700` POSIX file permissions for all API keys, local credentials, and configuration states, alongside advanced SSRF protections.
-- **MCP Integration**: Fully supports the Model Context Protocol (MCP) for extensible tool development and seamless OAuth authentication.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PyPI Version](https://img.shields.io/pypi/v/deepagents-code?label=core_version)](https://pypi.org/project/deepagents-code/#history)
+[![Twitter](https://img.shields.io/twitter/follow/langchain_oss?label=Follow)](https://x.com/langchain_oss)
 
-## Installation
+---
 
-You can install Morgan directly from this GitHub repository using `pip`:
+## ⚡ Quick Start
+
+Get Morgan running in your terminal with a single command:
 
 ```bash
 pip install git+https://github.com/RavaniRoshan/morgan.git#subdirectory=libs/code
 ```
 
-*Note: Morgan relies on the `deepagents-code` subsystem which is located in the `libs/code` directory of this repository.*
-
-## Quick Start
-
-Once installed, simply activate your environment and launch the interactive TUI:
-
+**Launch the interface:**
 ```bash
 dcode
 ```
 
-### Essential Commands
-Within the chat window, type `/help` to see all commands, or use these quick shortcuts:
-- `/mcp`: Open your local MCP configuration directory.
-- `/skills`: Open your custom skills directory.
-- `/settings`: Launch your settings (`config.toml`) in your default text editor.
-- `/auth`: Manage your provider and service credentials securely.
+---
 
-## Configuration
+## 💡 Why Morgan?
 
-Morgan relies on the `.deepagents` directory to store its state safely. You can define project-level customizations by creating an `agent.md` file in your repository:
+Morgan isn't just another wrapper. It's an engineered environment for developers who need **speed**, **security**, and **autonomy**.
 
-```bash
-mkdir -p .deepagents
-echo "Always use strict TypeScript types." > .deepagents/agent.md
-```
-Morgan will detect this file during initialization and ground the system prompt in your project's custom rules.
+- **🚀 Raw Performance**: A buttery-smooth, fully-animated TUI built on Textual for zero-latency interaction.
+- **🛡️ Hardened Security**: Enforced POSIX permissions (`0o600`/`0o700`) for credentials and advanced SSRF protections to keep your host safe.
+- **🤖 Agentic Orchestration**: Native support for autonomous sub-agents that can handle complex, asynchronous tasks in parallel.
+- **🔌 MCP Native**: Full Model Context Protocol (MCP) integration for an infinitely extensible tool ecosystem.
 
-## Security Model
+---
 
-Morgan is built to be security-driven:
-- **No API Leaks**: Pydantic `SecretStr` protects your tokens in memory, and crash logs automatically redact sensitive credentials.
-- **Filesystem Lockdown**: The agent enforces read/write lockdowns on its credential stores.
-- **Local Sandbox Execution**: Commands execute strictly inside monitored sandboxes, isolating operations from critical host OS components.
+## ✨ Core Features
 
-## License
+| Feature | Description | Benefit |
+| :--- | :--- | :--- |
+| **Interactive TUI** | Professional terminal interface with streaming responses | 10x faster dev loop |
+| **Autonomous Delegation** | Spawn isolated sub-agents for complex sub-tasks | Solve bigger problems faster |
+| **Project grounding** | Local `.deepagents/agent.md` for custom project rules | Zero-shot context injection |
+| **Secure Vault** | Pydantic `SecretStr` and credential lockdowns | Enterprise-grade security |
+| **Custom Skills** | Extend the agent with your own slash commands | Tailor the AI to your workflow |
 
-MIT License. See `LICENSE` for more details.
+---
+
+## 🏗️ Repository Map
+
+This repository is structured as a monorepo to separate the core engine from the high-level harness:
+
+- **[`libs/code/`](./libs/code)** $\rightarrow$ **The Heart of Morgan.** Contains the `deepagents-code` package, the TUI logic, and tool registries. **[Full Technical README here](./libs/code/README.md)**
+- **`examples/`** $\rightarrow$ Reference implementations of custom skills.
+- **`tests/`** $\rightarrow$ Comprehensive unit and integration suites.
+
+---
+
+## 🛠️ Essential Commands
+
+Once inside the Morgan TUI, use these shortcuts:
+- `/skills` $\rightarrow$ Manage your custom agent capabilities.
+- `/mcp` $\rightarrow$ Configure Model Context Protocol tools.
+- `/settings` $\rightarrow$ Edit your `config.toml` on the fly.
+- `/auth` $\rightarrow$ Securely manage API keys and provider tokens.
+
+---
+
+## ⚠️ Security Warning
+
+> [!WARNING]
+> Morgan provides powerful shell access. While it includes advanced isolation, always ensure you are running the agent in a directory you trust or utilize a remote sandbox backend for untrusted code.
+
+---
+
+## 🤝 Contributing
+
+We are building the future of agentic engineering. 
+1. **Fork** $\rightarrow$ **Branch** $\rightarrow$ **Implement** $\rightarrow$ **Test** $\rightarrow$ **PR**.
+2. Refer to the [Contributing Guide](https://docs.langchain.com/oss/python/contributing/overview) for quality standards.
+
+---
+
+## 📄 License
+
+**SPDX License Identifier: MIT**  
+Copyright (c) 2026 Ravani Roshan
